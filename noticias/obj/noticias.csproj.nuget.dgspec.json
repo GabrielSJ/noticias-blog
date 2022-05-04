@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Desenvolvimento-noticia\\noticias-blog\\noticias\\noticias.csproj": {}
+    "D:\\DesenvolvimentoWeb\\BlogNoticias\\noticias\\noticias.csproj": {}
   },
   "projects": {
-    "C:\\Desenvolvimento-noticia\\noticias-blog\\noticias\\noticias.csproj": {
+    "D:\\DesenvolvimentoWeb\\BlogNoticias\\noticias\\noticias.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Desenvolvimento-noticia\\noticias-blog\\noticias\\noticias.csproj",
+        "projectUniqueName": "D:\\DesenvolvimentoWeb\\BlogNoticias\\noticias\\noticias.csproj",
         "projectName": "noticias",
-        "projectPath": "C:\\Desenvolvimento-noticia\\noticias-blog\\noticias\\noticias.csproj",
-        "packagesPath": "C:\\Users\\giovana.cardoso\\.nuget\\packages\\",
-        "outputPath": "C:\\Desenvolvimento-noticia\\noticias-blog\\noticias\\obj\\",
+        "projectPath": "D:\\DesenvolvimentoWeb\\BlogNoticias\\noticias\\noticias.csproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "D:\\DesenvolvimentoWeb\\BlogNoticias\\noticias\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\giovana.cardoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
