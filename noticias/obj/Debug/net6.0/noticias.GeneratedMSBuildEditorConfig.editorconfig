@@ -8,37 +8,37 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = noticias
 build_property.RootNamespace = noticias
-build_property.ProjectDir = D:\DesenvolvimentoWeb\BlogNoticias\noticias\
+build_property.ProjectDir = C:\Desenvolvimento-noticia\noticias-blog\noticias\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\DesenvolvimentoWeb\BlogNoticias\noticias
+build_property.MSBuildProjectDirectory = C:\Desenvolvimento-noticia\noticias-blog\noticias
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/DesenvolvimentoWeb/BlogNoticias/noticias/Views/Home/Index.cshtml]
+[C:/Desenvolvimento-noticia/noticias-blog/noticias/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DesenvolvimentoWeb/BlogNoticias/noticias/Views/Home/Privacy.cshtml]
+[C:/Desenvolvimento-noticia/noticias-blog/noticias/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DesenvolvimentoWeb/BlogNoticias/noticias/Views/Shared/Error.cshtml]
+[C:/Desenvolvimento-noticia/noticias-blog/noticias/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DesenvolvimentoWeb/BlogNoticias/noticias/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Desenvolvimento-noticia/noticias-blog/noticias/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DesenvolvimentoWeb/BlogNoticias/noticias/Views/_ViewImports.cshtml]
+[C:/Desenvolvimento-noticia/noticias-blog/noticias/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DesenvolvimentoWeb/BlogNoticias/noticias/Views/_ViewStart.cshtml]
+[C:/Desenvolvimento-noticia/noticias-blog/noticias/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/DesenvolvimentoWeb/BlogNoticias/noticias/Views/Shared/_Layout.cshtml]
+[C:/Desenvolvimento-noticia/noticias-blog/noticias/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2p6qp378j4
