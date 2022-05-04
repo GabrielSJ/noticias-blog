@@ -9,13 +9,13 @@ namespace noticias.Models
         [Key]
         public int Id { get; set; }
 
-        [StringLength(80, MinimumLength = 2, ErrorMessage = "O {0} deve ter no minimo {1} e no máximo {2}")]
+        [StringLength(maximumLength: 80, MinimumLength = 2, ErrorMessage = "O {0} deve ter no minimo {2} e no máximo {1}")]
         public string Nome { get; set; }
 
-        [StringLength(200, ErrorMessage = "O {0} deve ter no minimo {1} e no máximo {2}")]
+        [StringLength(200, ErrorMessage = "O {0} deve ter no máximo {1}")]
         public string Email { get; set; }
 
-        [StringLength(30, MinimumLength = 6, ErrorMessage = "O {0} deve ter no minimo {1} e no máximo {2}")]
+        [StringLength(maximumLength: 30, MinimumLength = 6, ErrorMessage = "O {0} deve ter no minimo {2} e no máximo {1}")]
         public string Senha { get; set; }
 
         public List<Noticia> Noticias { get; set; }

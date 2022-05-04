@@ -9,18 +9,18 @@ namespace noticias.Models
         [Key]
         public int Id { get; set; }
 
-        [StringLength(100, MinimumLength = 2, ErrorMessage = "O {0} deve ter no minimo {1} e no máximo {2}")]
+        [StringLength( maximumLength: 100, MinimumLength = 2, ErrorMessage = "O {0} deve ter no minimo {2} e no máximo {1}")]
         public string Titulo { get; set; }
 
-        [StringLength(800, MinimumLength = 10, ErrorMessage = "O {0} deve ter no minimo {1} e no máximo {2}")]
         public string Texto { get; set; }
 
-        [StringLength(100, MinimumLength = 10, ErrorMessage = "O {0} deve ter no minimo {1} e no máximo {2}")]
+        [StringLength(100, ErrorMessage = "O {0} deve ter no máximo {1}")]
         public string Imagem { get; set; }
 
         public DateTime DtInclusao { get; set; }
 
         public int UsuarioId { get; set; }
+
         public virtual Usuario Usuario { get; set; }
     }
 }
