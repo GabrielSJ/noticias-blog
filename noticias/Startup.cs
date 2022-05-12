@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using noticias.Context;
+using noticias.Repositories;
+using noticias.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,10 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddTransient<INoticiaRepository, NoticiaRepository>();
+        services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+
         services.AddControllersWithViews();
     }
 

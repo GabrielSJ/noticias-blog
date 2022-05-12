@@ -1,0 +1,20 @@
+﻿@model IEnumerable<noticias.Models.Noticia>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12" style="text-align:center"> <h2> Ultimas Noticias</h2></div>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var noticia in Model)
+        {
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h4>@noticia.Titulo</h4>
+                <p><img src="@noticia.Imagem"></p>
+                <p>@noticia.Texto</p>
+            </div>
+        }
+    </div>
+</div>
