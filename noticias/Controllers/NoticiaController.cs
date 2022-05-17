@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using noticias.Repositories.Interfaces;
+using noticias.ViewModels;
 
 namespace noticias.Controllers
 {
@@ -7,15 +8,20 @@ namespace noticias.Controllers
     {
         private readonly INoticiaRepository _NoticiaRepository;
 
-        public NoticiaController(INoticiaRepository noticiaRepository)
+        public NoticiaController(INoticiaRepository noticiaRepository, IUsuarioRepository usuarioRepository)
         {
             _NoticiaRepository = noticiaRepository;
         }
 
+
         public IActionResult List()
         {
-            var noticias = _NoticiaRepository.Noticias;
-            return View(noticias);
+            var NoticiaListViewModel = new NoticiaListViewModel();
+            NoticiaListViewModel.Noticias = _NoticiaRepository.Noticias;
+            NoticiaListViewModel.Usuario = "Giogabri";
+
+            //var noticias = _NoticiaRepository.Noticias;
+            return View(NoticiaListViewModel);
         }
     }
 }
