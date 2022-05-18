@@ -10,12 +10,7 @@
     <div class="row">
         @foreach (var noticia in Model.Noticias)
         {
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <h4>@noticia.Titulo</h4>
-                <p><img src="@noticia.Imagem"></p>
-                <p>@noticia.Texto</p>
-                <p>@Model.Usuario</p>
-            </div>
+            <partial name="_NoticiaResumo" for="@noticia"/>
         }
     </div>
 </div>
