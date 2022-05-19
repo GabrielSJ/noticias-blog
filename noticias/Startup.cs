@@ -37,7 +37,7 @@ public class Startup
         services.AddTransient<INoticiaRepository, NoticiaRepository>();
         services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
-        services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
         services.AddControllersWithViews();
