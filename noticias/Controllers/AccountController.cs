@@ -59,5 +59,31 @@ namespace noticias.Controllers
             ModelState.AddModelError("", "Falha ao realizar o login!");
             return View(objLoginViewModel);
         }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(LoginViewModel objLoginViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new IdentityUser { UserName = objLoginViewModel.Email };
+                var result = await _userManager.CreateAsync(user, objLoginViewModel.Senha);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+                else
+                {
+                    this.ModelState.AddModelError("Registro", "Falha ao registrar usuário");
+                }
+            }
+            return View(objLoginViewModel);
+        }
     }
 }
