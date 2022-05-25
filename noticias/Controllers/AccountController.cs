@@ -1,19 +1,30 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using noticias.Context;
+using noticias.Models;
+using noticias.Repositories;
+using noticias.Repositories.Interfaces;
 using noticias.ViewModels;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace noticias.Controllers
 {
     public class AccountController : Controller
     {
 
+        private readonly IUsuarioRepository _UsuarioRepository;
+        private readonly AppDbContext _context;
+
+
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(IUsuarioRepository usuarioRepository, AppDbContext context)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
+            _UsuarioRepository = usuarioRepository;
+            _context = context;
+
         }
 
         public IActionResult Login(string returnUrl)
@@ -25,7 +36,7 @@ namespace noticias.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login(LoginViewModel objLoginViewModel)
+        public ActionResult Login(LoginViewModel objLoginViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -34,13 +45,11 @@ namespace noticias.Controllers
 
             if (objLoginViewModel != null)
             {
-                var user = await _userManager.FindByNameAsync(objLoginViewModel.Email);
+                var user = _UsuarioRepository.Usuarios.Where(t => t.Email == objLoginViewModel.Email).FirstOrDefault();
 
                 if (user != null)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(user, objLoginViewModel.Senha, false, false);
-
-                    if (result.Succeeded)
+                    if(user.Senha == objLoginViewModel.Senha)
                     {
                         if (string.IsNullOrEmpty(objLoginViewModel.ReturnUrl))
                         {
@@ -66,16 +75,22 @@ namespace noticias.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(LoginViewModel objLoginViewModel)
+        public ActionResult Register(LoginViewModel objLoginViewModel)
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = objLoginViewModel.Email };
-                var result = await _userManager.CreateAsync(user, objLoginViewModel.Senha);
+                Usuario objUsuario = new Usuario();
 
-                if (result.Succeeded)
+                objUsuario.Email = objLoginViewModel.Email;
+                objUsuario.Senha = MD5Hash(objLoginViewModel.Senha);
+                objUsuario.Nome = "teste";
+
+                var result = _context.Usuarios.Add(objUsuario);
+
+                if (result != null)
                 {
+                    _context.SaveChanges(true);
+
                     return RedirectToAction("Login", "Account");
                 }
                 else
@@ -84,6 +99,28 @@ namespace noticias.Controllers
                 }
             }
             return View(objLoginViewModel);
+        }
+
+        //this function Convert to Encord your Password 
+        public static string MD5Hash(string text)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            //compute hash from the bytes of text  
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+
+            //get hash result after compute it  
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                //change it into 2 hexadecimal digits  
+                //for each byte  
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
         }
     }
 }
